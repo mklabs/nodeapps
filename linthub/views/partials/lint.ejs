@@ -1,0 +1,26 @@
+<div class="lint">
+  <h2>
+    <a href="<%= lint.url %>">
+      <%= lint.title %>
+    </a>
+  </h2>
+  <a href="<%= lint.giturl %>">github file</a>
+  <table>
+    <thead>
+      <tr>
+        <th width="1%">Line</th>
+        <th>Reason</th>
+        <th width="60%">Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var key in lint.lints) { if (!lint.lints[key]) continue; %>
+        <tr>
+          <td><a href="<%= lint.giturl %>#L<%= lint.lints[key].line %>"><%= lint.lints[key].line %></a></td>
+          <td><%= lint.lints[key].reason %></td>
+          <td><%= lint.lints[key].evidence %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

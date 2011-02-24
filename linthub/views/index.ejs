@@ -1,0 +1,59 @@
+<h1>LintHub</h1>
+
+<p>This little Node app lets you easily run JSLint on a github repo. It makes use of <a href="https://github.com/ajaxorg/node-github">node-github</a> to access the Github API, <a href="https://github.com/douglascrockford/JSLint">JSLint</a> to hurt our feelings and <a href="https://github.com/ry/node">node.js</a> to serve them together.</p>
+
+<p>Very first workable version.</p>
+
+<h2>Installation</h2>
+
+<pre><code>git clone git://github.com/MkLabs/linthub.git
+cd linthub
+git submodule update --init --recursive
+node server.js
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Heads up to <a href="http://localhost:15001/">localhost:15001</a></p>
+
+<p>Lints are available under /lint/:user/:repo routes. You can run JSlint on a whole repository (request made to the github api are limited though), or restrict with the use of sub path and/or file names.</p>
+
+<h1>Options</h1>
+
+<p>JSLint options are in the todo list. Defaults JSLint options are applied.</p>
+
+<h3>Example</h3>
+
+<h4>This repo</h4>
+
+<ul>
+<li><a href="http://localhost:15001/lint/mklabs/linthub">localhost:15001/lint/mklabs/linthub</a></li>
+<li><a href="http://localhost:15001/lint/mklabs/linthub/static/js">localhost:15001/lint/mklabs/linthub/static/js</a></li>
+<li><a href="http://localhost:15001/lint/mklabs/linthub/js/script.js">localhost:15001/lint/mklabs/linthub/static/js/script.js</a></li>
+</ul>
+
+<h4>jQuery</h4>
+
+<ul>
+<li><a href="http://localhost:15001/lint/jquery/jquery/">localhost:15001/lint/jquery/jquery</a></li>
+<li><a href="http://localhost:15001/lint/jquery/jquery/src/">localhost:15001/lint/jquery/jquery/src/</a></li>
+</ul>
+
+<p>Have fun while exploring github with your new JSLint toy.</p>
+
+<h2>Todo</h2>
+
+<p>I kinda like this project. Since I discovered JSLint, I always loved it and tried to <a href="https://github.com/mklabs/lintswarm">make experiments with it</a>.</p>
+
+<p>I like the idea of running JSLint against any given repo. I have several ideas and improvments in mind:</p>
+
+<ul>
+<li>Design a simple and efficient way of caching github requests based on last commit's repo and sha. No need to re-perform the whole bunch of request for something we might already have.</li>
+<li>I really love the new GitHub <a href="https://github.com/blog/760-the-tree-slider">Tree Slider</a>, techniques used and inspiration really neat. Might think to try to implement a similar components to navigate through a git repo to lint.</li>
+<li>Full support of JSLint options and the ability for the user to change them.</li>
+<li>Allow users to authenticate themselves so as to avoid Github count request limits (Flushed every min, request limit is based on IP when requests are made in unauth'd mode).</li>
+</ul>
+
+<p>I have yet no ideas if this app will remain something I had done in an day or if it is an experiment I want to evolve to something bigger.</p>
+
+<h1>Lint them all!</h1>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+
+  <!--[if IE]><![endif]-->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title><%=title%></title>
+
+  <meta name="description" content="">
+  <meta name="author" content="<%= author %>">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1">
+
+  <script src="/js/libs/modernizr-1.6.min.js?v=1"></script>
+
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+
+  <div id="container">
+		<header>
+			<div id="top">
+				<div id="logo">
+					<h1>
+						<a href="./"><%=title %></a>
+					</h1>
+				</div>
+			</div>
+		</header>
+    
+    <div id="main">
+			<div id="main-inner">
+				<div class="main-list">
+					<div class="main-list-header">
+						<h2><a href="/"><%=header %></a></h2>
+					</div>
+					<div class="main-list-content wikistyle">
+						<%- body %>
+					</div>
+				</div>
+			</div>
+    </div> 
+  </div> <!--! end of #container -->
+
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>  
+  <script>!window.jQuery && document.write('<script src="js/libs/jquery-1.4.4.min.js"><\/script>')</script>
+  
+  
+  <script src="/js/mylibs/ui-treeslider/ui.treeslider.js"></script> 
+  <script src="/js/plugins.js?v=1"></script>
+  <script src="/js/script.js?v=1"></script>
+  
+
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js?v=1"></script>
+  <![endif]-->
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', '<%= analyticssiteid %>'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = '//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+  
+</body>
+</html>

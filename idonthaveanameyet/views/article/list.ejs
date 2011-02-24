@@ -1,0 +1,8 @@
+<div>
+	<dl>
+	<% list.forEach(function(val){ %>
+		<dt><%= val.title %></dt>
+		<dd><%- val.content %></dd>
+	<% }) %>
+	</dl>
+</div>

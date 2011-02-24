@@ -1,0 +1,66 @@
+<div id="slider">
+  <div class="breadcrumb" data-path="/tree/<%=path%>">
+    <a href="/tree/<%=path%>/"><b><%=path%></b></a>
+  </div>
+  
+
+  <div class="frames">
+    <div class="frame frame-center" data-path="<%=path%>/<%=(sha ? sha + '/' : '')%>">
+      <table class="browser" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr class="header">
+            <th></th>
+            <th>title</th>
+            <th>path<th>
+            <th>sha</th>
+            <th></th> 
+          </tr>
+          <% for (var key in files) { %>
+            
+            <tr class="">
+              <td class="icon">
+                <% if(files[key].type === 'tree') {%>
+                  <img alt="directory" src="/img/dir.png"> 
+                <% } else if(files[key].type === 'blob') { %>
+                  <img alt="directory" src="/img/txt.png">                   
+                <% } else if(files[key].type === 'commit') { %>
+                  <img alt="directory" src="/img/sub.png">                   
+                <% } %>
+              </td>
+              <td class="content">
+                <% if(files[key].type !== 'commit') { %>
+                  <a 
+                  href="/<%=files[key].type%>/<%=path%>/<%=(files[key].type === 'blob' ? files[key].name + '/' : "") %><%=files[key].sha%>" 
+                    class="js-slide-to">
+                      <%=files[key].name%>
+                  </a>  
+                <% } else { %>
+                      <%=files[key].name%>                  
+                <% } %>
+                
+              </td>
+              <td class="content">
+                <% if(files[key].type !== 'commit') { %>
+                  <a 
+                  href="/<%=files[key].type%>/<%=path%>/<%=(files[key].type === 'blob' ? files[key].name + '/' : "") %><%=files[key].sha%>" 
+                    class="js-slide-to">
+                     <%=path%>/<%=files[key].name%>
+                  </a>  
+                <% } else { %>
+                      <%=path%>/<%=files[key].name%>                  
+                <% } %>
+                </a>
+              </td>
+              <td class="sha"><%=files[key].sha%></td>
+              <td></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  
+  <div class="frame frame-loading" style="display:none;">
+    <img src="/img/big_spinner_336699.gif">
+  </div>
+</div>

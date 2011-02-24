@@ -1,0 +1,15 @@
+<div class="breadcrumb" data-path="<%=path%>/<%=sha%>/">
+  <a href="/tree/<%=path.split('/').slice(0,2).join('/')%>/"><b><%=path.split('/').slice(0,2).join(' / ')%></b></a> / 
+    <%=path.split('/').slice(2).join(' / ')%>
+</div>
+<div class="frame frame-center" data-path="<%=path%>/<%=sha%>/">
+  <% if(limit) { %>
+    <blocquote>
+      <p>
+        Too many files to lint, try to rectrict with sub directories. You're currently viewing the lints for <%=limit%> files.
+      </p>
+    </blocquote>
+  <% } %>
+
+  <%- partial('filelint.ejs', {	collection: lints}) %>
+</div>

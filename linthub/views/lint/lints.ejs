@@ -1,0 +1,11 @@
+<% if(limit) { %>
+  <blocquote>
+    <p>
+      Too many files to lint, try to rectrict with sub directories. You're currently viewing the lints for <%=limit%> files.
+    </p>
+  </blocquote>
+<% } %>
+
+<h2><%=sha%></h2>
+
+<%- partial('lint.ejs', {	collection: lints}) %>
