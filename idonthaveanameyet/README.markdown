@@ -1,5 +1,4 @@
-['Node', 'Express', 'Github API', 'Twitter like UI'].join(' + ') === this
------------------
+# ['Node', 'Express', 'Github API', 'Twitter like UI'].join(' + ') === this
 
 Yet another project that doesn't have a name yet.
 
@@ -40,4 +39,4 @@ Example
 -------
 Using npm/isaacs (cause nmp is great)
 
-![sample](https://github.com/MkLabs/idonthaveanameyet/raw/master/static/img/node-md-githubapi-sample.png "sample")
+![sample](https://github.com/mklabs/nodeapps/idonthaveanameyet/raw/master/static/img/node-md-githubapi-sample.png "sample")
